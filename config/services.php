@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    'waha' => [
+    'base_url' => env('WAHA_BASE_URL'),
+    'session' => env('WAHA_SESSION_NAME', 'default'),
+    'api_key' => env('WAHA_API_KEY'), // PLIS JANGAN TAMBAH API KEY LANGSUNG DISINI!!!
+],
+
 ];

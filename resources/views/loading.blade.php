@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
       :root {
     --text-head: #c9a86a;
     --sur: #832d36e4;
@@ -35,6 +37,7 @@
 
         .title {
             font-size: 48px;
+            font-family: "Fleur De Leah", cursive;
             color: var(--text-head);
             margin-bottom: 20px;
             font-style: italic;
@@ -82,12 +85,23 @@
             transition: transform 0.6s ease;
             z-index: 3;
         }
+.envelope-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 66;
+    transition: opacity 0.2 s ease;
+}
 
-        .envelope-wrapper:hover .flap {
-            transform: rotateX(180deg);
-        }
+.envelope-wrapper.open img {
+    opacity: 0;
+    pointer-events: none;
+}    
 
-         
+        .envelope.open .flap {
+        transform: rotateX(180deg);
+        } 
 
         @media (max-width: 480px) {
             .title {
@@ -119,15 +133,18 @@
         <div class="envelope-wrapper" onclick="toggleEnvelope()">
             <div class="envelope" id="envelope">
                 <div class="flap"></div>
-                <img src="" alt=""> 
+                 <!-- <img src="../img/Rectangle 17.png" alt="" style="width: 20%;"> -->
             </div> 
         </div>
     </div>
 
-    <script>
-        function toggleEnvelope() {
-            const envelope = document.getElementById('envelope');
-            envelope.classList.toggle('open');
-        }
-    </script>
+<script>
+    function toggleEnvelope() { 
+        const wrapper = document.querySelector('.envelope-wrapper');
+
+        // Toggle class pada kedua elemen
+        envelope.classList.toggle('open');
+        // wrapper.classList.toggle('open');
+    }
+</script>
 </body>

@@ -5,6 +5,10 @@ use App\Http\Controllers\VoucherScanController;
 use App\Http\Controllers\VoucherRedeemController; // <-- TAMBAHKAN INI
 use Illuminate\Support\Facades\Route;
 
+Route::get('/', function () {
+    return view('rumah'); 
+})->name('home');
+
 // Halaman RSVP untuk Tamu
 Route::get('/rsvp', [RsvpController::class, 'index'])->name('rsvp.index');
 Route::post('/rsvp', [RsvpController::class, 'store'])->name('rsvp.store');

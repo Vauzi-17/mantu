@@ -1,0 +1,708 @@
+@import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carattere&family=Fleur+De+Leah&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Poppins, sans-serif;
+    background: #170E05;
+}
+
+.navbar {
+    padding: 4rem 3rem;
+    position: absolute;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.navbar.scrolled {
+    padding: 0.7rem 0;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-brand:hover strong {
+    transform: scale(1.05);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+}
+
+.nav-menu a::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: linear-gradient(90deg, #fff, #fff);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-menu a:hover {
+    color: #fff;
+}
+
+.nav-menu a:hover::before {
+    width: 100%;
+}
+
+.nav-menu a.active {
+    color: #fff;
+}
+
+.nav-menu a.active::before {
+    width: 100%;
+}
+
+.logo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.logo #logo {
+    width: 200px;
+}
+
+.hero-title {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    font-family: "Birthstone Bounce", cursive;
+    font-size: 7rem;
+    text-shadow: black 6px 3px 2px;
+}
+
+.hero-isi {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+    z-index: 1;
+    letter-spacing: 2px;
+    font-family: "Birthstone Bounce", cursive;
+    text-shadow: black 6px 3px 2px;
+}
+
+.hero-isi p:first-child {
+    font-size: 2rem;
+}
+
+.hero-isi p:last-child {
+    font-size: 4.5rem;
+}
+
+.tamu {
+    position: absolute;
+    top: 111%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1rem 2rem;
+    z-index: 20;
+    cursor: pointer;
+    background: none;
+    color: white;
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: white 2px solid;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+
+.tamu:hover {
+    background: white;
+    color: black;
+    box-shadow: 0 5px 5px rgb(255, 255, 255);
+}
+
+.hero {
+    padding: 7rem 6rem;
+    height: 1300px;
+}
+
+.hero .bg-hero {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 40px;
+    border: #D6C8BD 2px solid;
+}
+
+/* ========================= */
+/*  RESPONSIVE HP VERSION   */
+/* ========================= */
+
+@media(max-width: 768px) {
+
+    .navbar {
+        padding: 1rem 1.5rem;
+        position: relative;
+    }
+
+    .nav-container {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Hide desktop menu */
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 1.5rem 2rem;
+        border-radius: 12px;
+        gap: 1.2rem;
+        min-width: 200px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        margin-top: 1rem;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    /* Hamburger icon */
+    .hamburger {
+        width: 35px;
+        height: 25px;
+        position: relative;
+        cursor: pointer;
+        display: block;
+        z-index: 999;
+        margin-left: auto;
+    }
+
+    .hamburger span {
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: white;
+        border-radius: 5px;
+        transition: .3s;
+    }
+
+    .hamburger span:nth-child(1) {
+        top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+        top: 10px;
+    }
+
+    .hamburger span:nth-child(3) {
+        top: 20px;
+    }
+
+    /* animasi X */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: 10px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: 10px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding: 3rem 2rem;
+        height: 1000px;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        top: 45%;
+    }
+
+    .hero-title h1 {
+        font-size: 3rem;
+    }
+
+    .hero-isi p:first-child {
+        font-size: 1.2rem;
+    }
+
+    .hero-isi p:last-child {
+        font-size: 2.5rem;
+    }
+
+    .hero-isi {
+        top: 65%;
+    }
+
+    /* Logo mengecil */
+    .logo #logo {
+        width: 120px;
+    }
+
+    /* Tombol tamu */
+    .tamu {
+        top: 95%;
+        font-size: 1rem;
+        padding: .7rem 1.3rem;
+    }
+
+    /* Bunga background mengecil */
+    .flower {
+        transform: scale(0.7);
+    }
+
+    .bg-hero {
+        height: 85vh;
+        border-radius: 20px;
+    }
+}
+
+
+.container-bunga {
+    top: 20%;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: .7;
+}
+
+.flower {
+    position: absolute;
+    animation: float 6s ease-in-out infinite;
+}
+
+.flower1 {
+    top: 10%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.flower2 {
+    top: 60%;
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.flower3 {
+    top: 30%;
+    right: 10%;
+    animation-delay: 4s;
+}
+
+.flower4 {
+    bottom: 20%;
+    left: 25%;
+    animation-delay: 1s;
+}
+
+.flower5 {
+    top: 50%;
+    left: 50%;
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-5deg);
+    }
+
+    75% {
+        transform: translateY(-30px) rotate(3deg);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.petal {
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.center {
+    animation: rotate 20s linear infinite;
+}
+
+.falling-petals {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.petal-fall {
+    position: absolute;
+    animation: fall 10s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        top: -10%;
+        opacity: 1;
+    }
+
+    100% {
+        top: 110%;
+        opacity: 0;
+    }
+}
+
+.petal-fall:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.petal-fall:nth-child(2) {
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.petal-fall:nth-child(3) {
+    left: 50%;
+    animation-delay: 6s;
+}
+
+.petal-fall:nth-child(4) {
+    left: 70%;
+    animation-delay: 2s;
+}
+
+.petal-fall:nth-child(5) {
+    left: 85%;
+    animation-delay: 5s;
+}
+
+.our-story {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(/public/assets/image/bg-story.png) no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8rem 2rem;
+}
+
+.our-story .container {
+    max-width: 1400px;
+    height: 700px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 40px;
+    padding: 4rem 4rem;
+    align-items: center;
+}
+
+.our-story h1 {
+    font-size: 5rem;
+    color: #5B4C3D;    
+    margin-bottom: 4rem;
+    font-family: "Carattere", cursive;
+    position: relative;
+}
+
+.our-story h1::after {
+    content: '';
+    display: inline-block;
+    width: 150px;
+    height: 3px;
+    background: #5B4C3D;
+    margin-left: 2rem;
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+}
+
+.text-story p:last-child {
+    margin-top: 2rem;
+    font-family: "Carattere", cursive;
+    font-size: 3rem;
+}
+
+.text-story p:last-child::before {
+    content: '';
+    display: inline-block;
+    width: 60px;
+    height: 2px;
+    background: #5B4C3D;
+    margin-right: 1rem;
+    vertical-align: middle;
+}
+
+.our-story p {
+    font-size: 1.8rem;
+    color: #5B4C3D;
+    line-height: 1.8;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-family: "Poppins", sans-serif;
+}
+
+.our-gallery {
+    position: relative;
+    width: 100%;
+    min-height: 110vh;
+    padding: 4rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.our-gallery .container {
+    max-width: 1400px;
+    height: 700px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+}
+
+.our-gallery h1 {
+    font-size: 5rem;
+    color: white;    
+    margin-bottom: 4rem;
+    font-family: "Carattere", cursive;
+    position: relative;
+    text-align: center;
+}
+
+.our-gallery h1::before {
+    content: '';
+    display: inline-block;
+    width: 150px;
+    height: 3px;
+    background: white;
+    margin-left: 2rem;
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+}
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    grid-auto-rows: 220px; 
+}
+
+.div1 {
+    grid-row: span 3; /* potret tinggi kiri */
+}
+
+.div2 {
+    grid-row: span 3; /* potret paling tinggi tengah */
+}
+
+.div3 {
+    grid-row: span 1; /* kotak square atas kanan */
+}
+
+.div4 {
+    grid-row: span 2; /* landscape bawah kanan */
+}
+
+.parent img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: 2px solid #553636;
+    transition: all 0.3s ease;
+}
+
+.div2 img:first-child:hover{
+    transform: perspective(900px) translateY(-5%) rotateX(25deg) ;
+    transition: all 0.3s ease;
+}
+
+.div2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.div2 img:last-child {
+    margin-top: 180px;
+    margin-left: -420px;
+    width: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    position: absolute;
+    z-index: -1;
+    border: none;
+}
+
+.div2:hover img:last-child {
+    opacity: 1;
+    transform: translate3d(0%, -30%, 100px);
+    z-index: 3;
+}
+
+/* Location Section */
+
+.location {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 6rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.location .container {
+    max-width: 1700px;
+    height: 700px;
+    width: 100%;
+    margin: 0 auto;
+    border: #ffffff 2px solid;
+    border-radius: 40px;
+    padding: 4rem 4rem;
+    display: flex;
+    gap: 6rem;
+    align-items: center;
+}
+
+.location .container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 30px;
+}
+
+.location h1 {
+    font-size: 7rem;
+    color: #ffffff;    
+    margin-bottom: 4rem;
+    font-family: "Carattere", cursive;
+    position: relative;
+}
+
+.location h1::after {
+    content: '';
+    display: inline-block;
+    width: 150px;
+    height: 3px;
+    background: white;
+    margin-left: 2rem;
+    vertical-align: middle;
+    position: relative;
+    top: -5px;
+}
+
+.locate-list {
+    flex-direction: column;
+    display: flex;
+    transform: translateX(3%);
+}
+
+.footer {
+    background: url('/public/assets/image/bg-footer.png') no-repeat center top;
+   background-size: 100% auto;
+    padding: 9rem 2rem 2rem;
+    color: white;
+    min-height: 300px; /* bikin background nggak kepotong */
+}
+
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: "Birthstone Bounce", cursive;
+}
+
+.footer-container h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.footer-container p {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+

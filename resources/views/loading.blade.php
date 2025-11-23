@@ -6,145 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
-
-      :root {
-    --text-head: #c9a86a;
-    --sur: #832d36e4;
-    --sur2: #832D36;
-    --bg-pri: linear-gradient(135deg, #f5f5f0 0%, #e8e8e0 100%)
-    --shadow: 0 10px 30px rgba(0, 0, 0, 0.684); 
-    }
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: 'Georgia', serif;
-            background: var(--bg-pri);
-            min-height: 100vh;
+            background: url(../img/Opening.svg) no-repeat center center/cover;
+            min-height: 96vh;
             display: flex;
-            justify-content: center;
             align-items: center;
-            padding: 20px;
-        }
-        .container {
-            text-align: center;
-            position: relative;
-        }
-
-        .title {
-            font-size: 48px;
-            font-family: "Fleur De Leah", cursive;
-            color: var(--text-head);
-            margin-bottom: 20px;
-            font-style: italic;
-            font-weight: normal;
-        }
-
-        .date {
-            font-size: 36px;
-            color: var(--text-head);
-            margin-bottom: 60px;
-            letter-spacing: 8px;
-        }
-
-        .envelope-wrapper {
-            position: relative;
-            width: 400px;
-            margin: 0 auto;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .envelope-wrapper:hover {
-            transform: scale(1.05);
-        }
-
-        .envelope {
-            position: relative;
-            width: 400px;
-            height: 280px;
-            background: var(--sur);
-            border-radius: 4px;
-            box-shadow: var(--shadow);
-        }
-
-        .flap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 0;
-            height: 0;
-            border-left: 200px solid transparent;
-            border-right: 200px solid transparent;
-            border-top: 140px solid var(--sur2);
-            transform-origin: top center;
-            transition: transform 0.6s ease;
-            z-index: 3;
-        }
-.envelope-wrapper img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 66;
-    transition: opacity 0.2 s ease;
-}
-
-.envelope-wrapper.open img {
-    opacity: 0;
-    pointer-events: none;
-}    
-
-        .envelope.open .flap {
-        transform: rotateX(180deg);
-        } 
-
-        @media (max-width: 480px) {
-            .title {
-                font-size: 32px;
-            }
-            .date {
-                font-size: 24px;
-            }
-            .envelope-wrapper {
-                width: 300px;
-            }
-            .envelope {
-                width: 300px;
-                height: 210px;
-            }
-            .flap {
-                border-left-width: 150px;
-                border-right-width: 150px;
-                border-top-width: 105px;
-            } 
+            justify-content: center;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="title">Cinta dan Mikail</h1>
-        <div class="date">12 . 12 . 25</div>
-        
-        <div class="envelope-wrapper" onclick="toggleEnvelope()">
-            <div class="envelope" id="envelope">
-                <div class="flap"></div>
-                 <!-- <img src="../img/Rectangle 17.png" alt="" style="width: 20%;"> -->
-            </div> 
-        </div>
-    </div>
-
-<script>
-    function toggleEnvelope() { 
-        const wrapper = document.querySelector('.envelope-wrapper');
-
-        // Toggle class pada kedua elemen
-        envelope.classList.toggle('open');
-        // wrapper.classList.toggle('open');
-    }
-</script>
+    <a href="rumah.blade.php"><img src="../img/mail.png" alt=""></a> 
 </body>
+</html>

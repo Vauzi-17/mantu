@@ -10,6 +10,7 @@
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Carattere&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Carattere&family=Fleur+De+Leah&display=swap');
 
     * {
         margin: 0;
@@ -54,8 +55,7 @@
         list-style: none;
         gap: 2.5rem;
         align-items: center;
-    }
-
+    } 
     .nav-menu li {
         position: relative;
     }
@@ -667,14 +667,96 @@
         height: 100%;
     }
 
+    /* Location Section */
+        .location-section {
+            background: white;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .location-section::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: white;
+            clip-path: polygon(0 0%, 100% 20%, 100% 100%, 0 100%);
+        }
+
+        .location-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .location-header h2 {
+            font-family: "Fleur De Leah", cursive;
+            font-size: 36px;
+            font-weight: 300;
+            color: #333;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .location-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: #333;
+        }
+
+        .location-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+            background: #f5f5f5;
+            padding: 40px;
+            border-radius: 15px;
+            border: 2px solid #e0e0e0;
+        }
+
+        .location-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+        }
+
+        .location-details h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .location-details p {
+            margin-bottom: 12px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .location-details p strong {
+            color: #333;
+        }
+        
     /* Responsive Design */
     @media (max-width: 1024px) {
         .gallery-grid {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .gallery-tall {
-            grid-row: span 1;
+            grid-row: span 2;
         }
 
         .our-gallery h1::before {
@@ -693,7 +775,7 @@
         }
 
         .gallery-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: 2fr;
             gap: 1.5rem;
         }
 
@@ -704,6 +786,9 @@
         .our-gallery h1::before {
             display: none;
         }
+        .location-container {
+                grid-template-columns: 1fr;
+        }
     }
 
     @media (max-width: 480px) {
@@ -712,9 +797,14 @@
         }
 
         .gallery-grid {
+            grid-template-columns: repeat(3, 1fr);
             gap: 1rem;
         }
+        .location-container {
+                grid-template-columns: 1fr;
+        }
     }
+    
 </style>
 
 <body>
@@ -737,7 +827,7 @@
             </div>
         </div>
         <div class="logo">
-            <img src="/public/assets/image/cmo.png" id="logo" alt="logo">
+            <img src="../public/assets/image/cmo.png" id="logo" alt="logo">
         </div>
         <div class="hero-text">
             <div class="hero-title">
@@ -753,7 +843,7 @@
         <button class="tamu">
             Masukkan Data Tamu Anda
         </button>
-        <img src="/public/assets/image/bg-hero.png" class="bg-hero" alt="hero-bg">
+        <img src="../public/assets/image/bg-hero.png" class="bg-hero" alt="hero-bg">
     </section>
 
     <div class="container">
@@ -897,7 +987,35 @@
             </div>
         </div>
     </section>
+    <section class="date">
 
+    </section>
+    <!-- Location Section -->
+    <section class="location-section">
+        <div class="container">
+            <div class="location-header">
+                <h2>Location</h2>
+            </div>
+
+            <div class="location-container">
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3953.5193169151726!2d110.36882507346187!3d-7.797068592133697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a5787e6b5e6b5%3A0x1234567890abcdef!2sYogyakarta!5e0!3m2!1sen!2sid!4v1234567890123" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+
+                <div class="location-details">
+                    <h3>lokasi Acara</h3>
+                    <p><Strong>Alamat:</Strong>Jl. DI Paijatan No.128</p>
+                    <p><strong>Desa/Kelurahan </strong>Purwokerto kidul</p>
+                    <p><strong>kecamatan:</strong> Banyumas</p>
+                    <p><strong>Provisi: </strong>Jawa ireeng</p>
+                <p><strong>kode pos: </strong>53147</p>                </div>
+            </div>
+        </div>
+    </section>
+ 
+    <footer>
+        Footer Content
+    </footer>   
     <script>
         const sections = document.querySelectorAll('section');
 

@@ -56,7 +56,7 @@ class GenerateVoucherJob implements ShouldQueue
             $qrCodeData = QrCode::format('png')->size(300)->generate($voucher->code);
             
             // Konversi ke base64 untuk di-embed
-            $qrCodeBase64 = 'data:image/png;base64,' . base64_encode($qrCodeData);
+            $qrCodeBase64 = base64_encode($qrCodeData);
 
             // 5. Kirim email
             Mail::to($this->guest->email)->send(new VoucherNotification($this->guest, $qrCodeBase64));

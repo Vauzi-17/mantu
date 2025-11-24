@@ -23,71 +23,70 @@
     </div>
 
     <!-- Load library scanner -->
-    <script src="[https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js](https://unpkg.com/html5-qrcode/minified/html5-qrcode.min.js)"></script>
-    
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>   
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const resultContainer = document.getElementById('scan-result');
-            
-            // Fungsi callback saat QR code sukses terdeteksi
-            function onScanSuccess(decodedText, decodedResult) {
-                // `decodedText` adalah isi dari QR code (kode voucher)
-                console.log(`Scan berhasil: ${decodedText}`);
+    document.addEventListener('DOMContentLoaded', function () {
+        const resultContainer = document.getElementById('scan-result');
 
-                // Matikan scanner
-                html5QrcodeScanner.clear();
-                resultContainer.innerHTML = `<span class="text-blue-600">Memvalidasi kode ${decodedText}...</span>`;
+        let html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader",
+            { fps: 10, qrbox: { width: 250, height: 250 } },
+            false
+        );
 
-                // Kirim kode ke backend via API
-                redeemVoucher(decodedText);
-            }
-
-            // Fungsi callback saat scan gagal (opsional)
-            function onScanError(errorMessage) {
-                // console.warn(`Scan error: ${errorMessage}`);
-            }
-
-            // Inisialisasi scanner
-            let html5QrcodeScanner = new Html5QrcodeScanner(
-                "qr-reader", // ID elemen <div>
-                { fps: 10, qrbox: { width: 250, height: 250 } }, // Konfigurasi
-                false // verbose
-            );
-            
-            // Mulai scanning
+        function startScanner() {
             html5QrcodeScanner.render(onScanSuccess, onScanError);
+            resultContainer.innerHTML = "Arahkan kamera ke QR Code Voucher...";
+        }
 
+        // Callback berhasil scan
+        function onScanSuccess(decodedText, decodedResult) {
+            console.log(`Scan berhasil: ${decodedText}`);
 
-            // Fungsi untuk mengirim data ke API
-            async function redeemVoucher(code) {
-                try {
-                    const response = await fetch("{{ route('voucher.redeem') }}", {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}' // Penting untuk keamanan
-                        },
-                        body: JSON.stringify({ code: code })
-                    });
+            html5QrcodeScanner.clear();
+            resultContainer.innerHTML = `<span class="text-blue-600">Memvalidasi kode ${decodedText}...</span>`;
 
-                    const result = await response.json();
+            redeemVoucher(decodedText);
+        }
 
-                    if (response.ok) {
-                        // Sukses
-                        resultContainer.innerHTML = `<span class="text-green-600">${result.message}</span>`;
-                    } else {
-                        // Error (voucher tidak valid, sudah dipakai, dll)
-                        resultContainer.innerHTML = `<span class="text-red-600">${result.error}</span>`;
-                    }
+        function onScanError(errorMessage) {
+            // optional
+        }
 
-                } catch (error) {
-                    console.error('Fetch error:', error);
-                    resultContainer.innerHTML = `<span class="text-red-600">Error: Gagal terhubung ke server.</span>`;
+        // Kirim ke backend
+        async function redeemVoucher(code) {
+            try {
+                const response = await fetch("{{ route('voucher.redeem') }}", {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                    },
+                    body: JSON.stringify({ code: code })
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    resultContainer.innerHTML = `<span class="text-green-600">${result.message}</span>`;
+                } else {
+                    resultContainer.innerHTML = `<span class="text-red-600">${result.error}</span>`;
                 }
 
-                // Tambahkan tombol untuk scan lagi
-                resultContainer.innerHTML += ` <button onclick="window.location.reload()" class="ml-2 text-sm text-blue-500 underline">Scan Lagi</button>`;
+            } catch (error) {
+                console.error('Fetch error:', error);
+                resultContainer.innerHTML = `<span class="text-red-600">Error: Gagal terhubung ke server.</span>`;
             }
-        });
+
+            // Auto scan lagi setelah 2 detik
+            setTimeout(() => {
+                startScanner();
+            }, 2000);
+        }
+
+        // Start awal
+        startScanner();
+    });
     </script>
 </x-app-layout>

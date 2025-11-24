@@ -4,10 +4,7 @@ namespace App\Mail;
 
 use App\Models\Guest;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
-use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
 class VoucherNotification extends Mailable
@@ -27,30 +24,18 @@ class VoucherNotification extends Mailable
     }
 
     /**
-     * Get the message envelope.
+     * Build the message.
      */
-    public function envelope(): Envelope
+    public function build()
     {
-        return new Envelope(
-            subject: 'Voucher Spesial Untuk Anda!',
-        );
-    }
-
-    /**
-     * Get the message content definition.
-     */
-    public function content(): Content
-    {
-        return new Content(
-            view: 'emails.voucher', // Nama file Blade template
-        );
-    }
-
-    /**
-     * Get the attachments for the message.
-     */
-    public function attachments(): array
-    {
-        return [];
+        return $this
+            ->subject('Voucher Spesial Untuk Anda!')
+            ->view('emails.voucher')
+            ->with(['guest' => $this->guest])
+            ->attachData(
+                base64_decode($this->qrCodeBase64),
+                'qrcode.png',
+                ['mime' => 'image/png']
+            );
     }
 }

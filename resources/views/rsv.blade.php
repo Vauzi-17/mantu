@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: url(../img/bg_blur.svg) no-repeat center center/cover;
+            background: url(/public/assets/image/bg-hero.webp) no-repeat center center/cover;
             min-height: 96vh;
             display: flex;
             align-items: center;
@@ -21,9 +21,26 @@
             padding: 20px;
         }
 
+        .bg-rsvp {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bg-rsvp img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(5px);
+        }
+
+
         .form-container {
-            background: rgba(20, 20, 20, 0.8);
-            backdrop-filter: blur(10px);
+            background: #120b08bb;
             border: 2px solid rgba(200, 150, 100, 0.3);
             border-radius: 30px;
             display: grid;
@@ -36,8 +53,7 @@
         }
 
         .form-image {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            padding: 60px 40px;
+            padding: 10px 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -53,7 +69,6 @@
         .form-image-placeholder {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(200, 150, 100, 0.1), rgba(100, 80, 60, 0.1));
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -124,12 +139,6 @@
             color: rgba(255, 255, 255, 0.3);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
         .submit-btn {
             background: transparent;
             border: 2px solid rgba(200, 150, 100, 0.6);
@@ -160,6 +169,9 @@
 
         /* Responsive */
         @media (max-width: 968px) {
+            .form-image {
+                display: none;
+            }
             .form-container {
                 grid-template-columns: 1fr;
             }
@@ -179,9 +191,9 @@
                 margin-bottom: 30px;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .submit-btn {
+                width: 100%;
+                text-align: center;
             }
         }
 
@@ -205,15 +217,15 @@
     </style>
 </head>
 <body>
+    <div class="bg-rsvp">
+        <img src="/public/assets/image/bg-hero.webp" alt="">
+    </div>
     <div class="form-container">
         <!-- Left Side - Image -->
         <div class="form-image">
             <div class="form-image-placeholder">
                 <img src="../img/Rectangle 82.svg" alt="">
             </div>
-            <!-- Uncomment untuk menggunakan gambar sebenarnya
-            <img src="wedding-jewelry.jpg" alt="Wedding Details">
-            -->
         </div>
 
         <!-- Right Side - Form -->
@@ -226,19 +238,8 @@
                     <input type="text" id="name" name="name" required>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="class">Class</label>
-                        <input type="text" id="class" name="class">
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="nis">NIS/NIP</label>
-                        <input type="text" id="nis" name="nis">
-                    </div> -->
-                </div>
-
                 <div class="form-group">
-                    <label for="whatsapp">Whatsapp number <span class="required">(required)</span></label>
+                    <label for="whatsapp">Whatsapp number <span class="required">(optional)</span></label>
                     <input type="tel" id="whatsapp" name="whatsapp" placeholder="08xx xxxx xxxx" required>
                 </div>
 

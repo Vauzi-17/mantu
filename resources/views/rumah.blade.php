@@ -21,7 +21,7 @@
                 </div>
 
                 <ul class="nav-menu">
-                    <li><a href="#our-story" class="nav-link">Our Story</a></li>
+                    <li><a href="#our-story" class="nav-link active">Our Story</a></li>
                     <li><a href="#our-gallery" class="nav-link">Our Gallery</a></li>
                     <li><a href="#the-date" class="nav-link">The Date</a></li>
                     <li><a href="#location" class="nav-link">Location</a></li>
@@ -42,10 +42,10 @@
                 <p>Yogayakarta’s wedding</p>
             </div>
         </div>
-        <button class="tamu">
+        <button class="tamu" onclick="location.href='/rsvp'">
             Masukkan Data Tamu Anda
         </button>
-        <img src="/public/assets/image/bg-hero.png" class="bg-hero" alt="hero-bg">
+        <img src="/public/assets/image/bg-hero.webp" class="bg-hero" alt="hero-bg">
     </section>
 
     <div class="container-bunga">
@@ -169,14 +169,17 @@
         <div class="container">
             <h1>Our Gallery</h1>
             <div class="parent">
-                <div class="div1"><img src="/public/assets/image/gallery-2.png" alt=""></div>
-                <div class="div2">
-                    <img src="/public/assets/image/gallery-3.png" alt="">
-                    <img src="/public/assets/image/mc.png" alt="">
-                </div>
-                <div class="div3"><img src="/public/assets/image/gallery-4.png" alt=""></div>
-                <div class="div4"><img src="/public/assets/image/gallery-1.png" alt=""></div>
+                <div class="div1"><img src="/public/assets/image/gallery-2.webp" alt=""></div>
+                <div class="div2"><img src="/public/assets/image/gallery-3.webp" alt=""></div>
+                <div class="div3"><img src="/public/assets/image/gallery-4.webp" alt=""></div>
+                <div class="div4"><img src="/public/assets/image/gallery-1.webp" alt=""></div>
             </div>
+        </div>
+    </section>
+
+    <section class="the-date" id="the-date">
+        <div class="container">
+            
         </div>
     </section>
 

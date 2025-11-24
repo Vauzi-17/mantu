@@ -25,8 +25,8 @@ class RsvpController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:guests,email',
-            'phone' => 'required|string|max:20',
-            'rsvp_status' => 'required|in:coming,not_coming',
+            'phone' => 'nullable|string|max:20',
+            'rsvp_status' => 'coming',
         ]);
 
         if ($validator->fails()) {
@@ -39,9 +39,7 @@ class RsvpController extends Controller
         $guest = Guest::create($request->all());
 
         // Jika tamu konfirmasi "Hadir", panggil Job
-        if ($guest->rsvp_status == 'coming') {
-            GenerateVoucherJob::dispatch($guest);
-        }
+        GenerateVoucherJob::dispatch($guest);
 
         return redirect()->route('rsvp.index')
                     ->with('success', 'Terima kasih telah melakukan RSVP!');

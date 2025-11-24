@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique(); // Email harus unik
-            $table->string('phone');          // No. WA
-            $table->string('rsvp_status')->default('pending'); // cth: pending, coming, not_coming
+            $table->string('phone')->nullable();// No. WA
+            $table->string('rsvp_status')->default('coming'); // cth: pending, coming, not_coming
             $table->timestamps();
         });
     }

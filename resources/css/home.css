@@ -456,7 +456,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url(/public/assets/image/bg-story.png) no-repeat center center/cover;
+    background: url(/public/assets/image/bg-story.webp) no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -603,7 +603,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url(/public/assets/image/bg-date.png) no-repeat center center/cover;
+    background: url(/public/assets/image/bg-date.webp) no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -815,7 +815,7 @@ body {
 }
 
 .footer {
-    background: url('/public/assets/image/bg-footer.png') no-repeat center top;
+    background: url('/public/assets/image/bg-footer.webp') no-repeat center top;
    background-size: 100% auto;
     padding: 9rem 2rem 2rem;
     color: white;

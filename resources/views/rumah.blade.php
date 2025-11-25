@@ -178,7 +178,7 @@
     </section>
 
     <section class="date">
-        <img src="/public/assets/image/bg-date.png" alt="" class="bg-date">
+        <img src="/public/assets/image/bg-date.webp" alt="" class="bg-date">
         <div class="date-contain">
             <img src="/public/assets/image/mail.png" alt="" class="mail-box">
             <img src="/public/assets/image/bunga-kanan-atas-ke2.png" alt="" class="mail-bunga1">

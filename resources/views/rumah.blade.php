@@ -177,7 +177,7 @@
         </div>
     </section>
 
-    <section class="date">
+    <section class="date" id="the-date">
         <img src="/public/assets/image/bg-date.webp" alt="" class="bg-date">
         <div class="date-contain">
             <img src="/public/assets/image/mail.png" alt="" class="mail-box">
@@ -203,7 +203,6 @@
         </div>
     </section>
 
-    </section>
     <!-- Location Section -->
     <section class="location" id="location">
         <div class="container">
@@ -216,18 +215,22 @@
                 <div class="locate-text">
                     <p>Jl. DI Panjaitan No.128, Karangreja, Purwokerto Kidul, Kec. Purwokerto Sel., Kabupaten Banyumas,
                         Jawa Tengah 53141</p>
-                    <div class="locate-list">
+                    <ul class="locate-list">
                         <li>Alamat: Jl. DI Panjaitan No.128</li>
                         <li>Desa/Kelurahan: Purwokerto Kidul</li>
                         <li>Kecamatan: Purwokerto Selatan</li>
                         <li>Kabupaten: Banyumas</li>
                         <li>Provinsi: Jawa Tengah</li>
                         <li>Kode Pos: 53147</li>
-                    </div>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="scroll-to-top" onclick="scrollToTop()">
+        <span>&#8593;</span>
+    </div>
 
     <footer class="footer">
         <div class="footer-container">
@@ -237,6 +240,9 @@
             </p>
         </div>
     </footer>
+
+
+
     <script>
         const sections = document.querySelectorAll('section');
 
@@ -267,23 +273,52 @@
             }
         });
 
-        // Hamburger Toggle
         const hamburger = document.querySelector(".hamburger");
         const menu = document.querySelector(".nav-menu");
         const navLinks = document.querySelectorAll(".nav-link");
 
+        // Toggle menu saat hamburger diklik
         hamburger.addEventListener("click", () => {
             hamburger.classList.toggle("active");
             menu.classList.toggle("active");
         });
 
-        // Close menu when link clicked
+        // Tutup menu saat salah satu link diklik
         navLinks.forEach(link => {
             link.addEventListener("click", () => {
                 hamburger.classList.remove("active");
                 menu.classList.remove("active");
             });
         });
+
+        // Tambahan: Tutup menu jika user klik di luar menu (opsional tapi bagus untuk UX)
+        document.addEventListener("click", (e) => {
+            if (!hamburger.contains(e.target) && !menu.contains(e.target)) {
+                hamburger.classList.remove("active");
+                menu.classList.remove("active");
+            }
+        });
+
+        // Ambil elemen tombol
+        const scrollBtn = document.querySelector('.scroll-to-top');
+
+        // Fungsi untuk memantau scroll
+        window.addEventListener('scroll', () => {
+            // Jika scroll lebih dari 300px dari atas, munculkan tombol
+            if (window.scrollY > 300) {
+                scrollBtn.classList.add('show');
+            } else {
+                scrollBtn.classList.remove('show');
+            }
+        });
+
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
 
     </script>
 

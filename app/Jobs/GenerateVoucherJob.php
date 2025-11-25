@@ -53,7 +53,7 @@ class GenerateVoucherJob implements ShouldQueue
             ]);
 
             // 4. Generate QR Code (sebagai data URI untuk di-embed di email)
-            $qrCodeData = QrCode::format('png')->size(300)->generate($voucher->code);
+            $qrCodeData = QrCode::format('png')->size(300)->margin(5)->generate($voucher->code);
             
             // Konversi ke base64 untuk di-embed
             $qrCodeBase64 = base64_encode($qrCodeData);

@@ -228,6 +228,30 @@
         </div>
     </section>
 
+    <section class="surat">
+        <div class="container">
+            <img src="/public/assets/image/bunga-kanan-atas-ke2.png" class="flower-surat">
+            <div class="red-card card-rsvp">
+                <div class="card-content">
+                    <p class="small-text">fill your</p>
+                    <h1>RSVP</h1>
+                    <div class="divider"></div>
+                    <p class="names">Cinta & Mikail</p>
+                </div>
+            </div>
+
+            <div class="red-card card-message">
+                <div class="card-content">
+                    <p>With deep gratitude, we extend our sincere thanks for your kind attention and the prayers you
+                        have offered. We also respectfully request the presence of Mr./Ms./Brother/Sister to join us and
+                        bestow your blessings on our happy day. Your attendance is a great honor and joy for us.</p>
+                    <br>
+                    <p>Sincerely,<br>Cinta and Mikail, and our family</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="scroll-to-top" onclick="scrollToTop()">
         <span>&#8593;</span>
     </div>

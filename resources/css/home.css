@@ -557,7 +557,7 @@ body {
     line-height: 1.8;
     font-weight: 500;
     letter-spacing: 1px;
-    font-family: "Poppins", sans-serif;
+    font-family: Poppins, sans-serif;
     text-align: justify;
 }
 
@@ -1468,6 +1468,206 @@ body {
     }
 }
 
+.surat {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 2rem;
+}
+
+.surat .container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    /* Biarkan tinggi menyesuaikan lebar */
+    aspect-ratio: 436 / 189;
+    background: url(/public/assets/image/bg-surat.webp) no-repeat center center;
+    background-size: 100% 100%;
+    /* Memaksa gambar memenuhi kotak yang rasionya sudah pas */
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    border-radius: 40px;
+}
+
+.red-card {
+    position: absolute;
+    background-color: #690116;
+    color: #fff;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-rsvp {
+    width: 45%;
+    height: 55%;
+    top: -3%;
+    left: 25%;
+    z-index: 2;
+    transform: rotate(-6deg);
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 35%,
+            92% 50%,
+            100% 65%,
+            100% 100%,
+            0 100%,
+            0 65%,
+            8% 50%,
+            0 35%);
+    border-radius: 20px;
+}
+
+.card-message {
+    width: 45%;
+    height: 60%;
+    top: 45%;
+    left: 30%;
+    z-index: 1;
+    background-color: #690116;
+    color: #fff;
+    padding: 8rem 2rem 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    transform: rotate(10deg);
+    border-radius: 20px;
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.6);
+    text-align: start;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.card-message .card-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.card-message .card-content p:last-child {
+    margin-top: 0.5rem;
+}
+
+
+.card-rsvp h1 {
+    font-size: 9rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.card-rsvp .divider {
+    height: 2px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 1rem auto;
+}
+
+.card-rsvp .names {
+    font-family: "Birthstone Bounce", cursive;
+    font-size: 3rem;
+}
+
+.card-rsvp .small-text {
+    font-size: 2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.flower-surat {
+    position: absolute;
+    width: 32%;
+    bottom: 15%;
+    left: 8%;
+    z-index: 3;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* ========== RESPONSIVE SURAT ========== */
+@media (max-width: 768px) {
+
+    .surat {
+        padding: 2rem 1rem;
+        height: auto;
+        min-height: auto;
+    }
+
+    .surat .container {
+        aspect-ratio: unset;
+        width: 100%;
+        height: auto;
+        min-height: 100vh;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        padding: 4rem 1.5rem;
+        overflow: hidden;
+    }
+
+    .red-card {
+        position: relative;
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        top: auto;
+        left: auto;
+        right: auto;
+    }
+
+    /* 3. Kartu RSVP (Atas) */
+    .card-rsvp {
+        transform: rotate(-3deg);
+        margin-bottom: -4rem;
+        z-index: 2;
+        padding: 2rem;
+    }
+
+    .card-rsvp h1 {
+        font-size: 5rem;
+    }
+
+    .card-rsvp .names {
+        font-size: 2rem;
+    }
+
+    .card-rsvp .small-text {
+        font-size: 1.5rem;
+    }
+
+    .card-message {
+        transform: rotate(2deg);
+        z-index: 1;
+        padding: 6rem 2rem 3rem 2rem;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Sesuaikan ukuran teks paragraf */
+    .card-message .card-content p {
+        font-size: 1rem;
+        text-align: left;
+    }
+
+    /* 5. Bunga Hiasan */
+    .flower-surat {
+        width: 50%;
+        top: 0;
+        right: -10%;
+        bottom: auto;
+        left: auto;
+        transform: rotate(180deg);
+    }
+}
 
 .footer {
     background: url('/public/assets/image/bg-footer.webp') no-repeat center top;
@@ -1498,6 +1698,7 @@ body {
     letter-spacing: 2px;
     text-decoration: underline;
 }
+
 
 /* ========== RESPONSIVE FOOTER ========== */
 

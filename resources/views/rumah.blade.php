@@ -10,7 +10,8 @@
 <link rel="stylesheet" href="/resources/css/home.css">
 
 <body>
-
+    <img src="/public/assets/image/bunga-kiri-hero.png" class="bunga-kiri-hero">
+    <img src="/public/assets/image/bunga-kanan-hero.png" class="bunga-kanan-hero">
     <section class="hero" id="hero">
         <div class="navbar">
             <div class="nav-container">

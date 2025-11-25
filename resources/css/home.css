@@ -14,6 +14,34 @@ body {
     background: #170E05;
 }
 
+.bunga-kiri-hero {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 25%;
+    z-index: 5;
+}
+
+.bunga-kanan-hero {
+    position: absolute;
+    top: 68%;
+    right: 0;
+    width: 25%;
+    z-index: 5;
+}
+
+@media(max-width: 768px) {
+    .bunga-kiri-hero {
+        width: 50%;
+        top: -5%;
+    }
+
+    .bunga-kanan-hero {
+        width: 50%;
+        top: 80%;
+    }
+}
+
 .navbar {
     padding: 4rem 3rem;
     position: absolute;
@@ -149,6 +177,7 @@ body {
     border: white 2px solid;
     font-size: 1.3rem;
     transition: all 0.3s ease;
+    font-weight: bold;
 }
 
 .tamu:hover {
@@ -171,7 +200,6 @@ body {
 
 @media(max-width: 768px) {
 
-    /* --- 1. Navbar FIXED di paling atas (overlay hero) --- */
     .navbar {
         position: fixed;
         top: 0;

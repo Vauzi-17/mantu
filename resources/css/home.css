@@ -752,7 +752,7 @@ body {
 
 .our-gallery .container {
     max-width: 1400px;
-    height: 700px;
+    height: 950px;
     width: 100%;
     margin: 0 auto;
     padding: 2rem 4rem;
@@ -1015,180 +1015,522 @@ body {
     }
 }
 
-
-.the-date {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background: url(/public/assets/image/bg-date.webp) no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 8rem 2rem;
-}
-
-.the-date .container {
-    max-width: 1400px;
-    height: 700px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 2rem 4rem;
-}
-
-/* date */
+/* date Section */
 .date {
     position: relative;
     width: 100%;
-    height: 900px;
-    /* background-image: url('/public/assets/image/bg-mail.png'); */
-    background-size: cover;
-    background-position: center;
+    min-height: 900px;
+    height: auto;
     overflow: hidden;
+    padding: 50px 0;
 }
 
 .date .bg-date {
     position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
     width: 100%;
-    height: 500px;
-    margin-top: 250px;
+    height: auto;
+    object-fit: cover;
     z-index: -5;
+    max-height: 900px;
+    filter: blur(4px);
+    -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+);
+mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 20%,
+    black 80%,
+    transparent 100%
+);
+
 }
 
+.date .date-contain {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: scale(1.2);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+}
+
+/* Mail Box - Center */
 .date .mail-box {
     position: absolute;
-    width: 550px;
-    margin-top: 185px;
-    margin-left: 28%;
-    z-index: 1;
+    top: 185px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(550px, 80vw);
+    max-width: 550px;
+    z-index: 99;
 }
 
+/* Bunga 1 - Kanan Atas */
 .date .mail-bunga1 {
     position: absolute;
-    width: 380px;
-    margin-top: 120px;
-    margin-left: 50%;
+    top: 10%;
+    right: 10%;
+    z-index: 2;
 }
 
+/* Bunga 2 - Kanan Atas ke-2 */
 .date .mail-bunga2 {
     position: absolute;
-    width: 340px;
-    margin-top: 150px;
-    margin-left: 60%;
-    z-index: 2;
+    top: 5%;
+    right: 0;
+    z-index: 1;
+    width: 30%;
 }
 
+/* Bunga 3 - Kiri Bawah */
 .date .mail-bunga3 {
     position: absolute;
-    width: 280px;
-    margin-top: 400px;
-    margin-left: 20%;
-    rotate: calc(-30px);
-    z-index: 3;
+    bottom: 15%;
+    left: 19%;
+    width: 20%;
+    z-index: 100;
 }
 
+/* Bunga 4 - Kiri Atas ke-2 */
 .date .mail-bunga4 {
     position: absolute;
-    width: 410px;
-    margin-top: 150px;
-    margin-left: 15%;
-}
-
-.date .mail-bunga5 {
-    position: absolute;
-    width: 340px;
-    margin-top: 120px;
-    margin-left: 28%;
-}
-
-.date .mail-bunga6 {
-    position: absolute;
-    width: 300px;
-    margin-top: 450px;
-    margin-left: 53%;
+    top: 10%;
+    left: 14%;
     z-index: 2;
 }
 
+/* Bunga 5 - Kiri Atas */
+.date .mail-bunga5 {
+    position: absolute;
+    top: 5%;
+    left: 20%;
+    z-index: 3;
+    width: 35%;
+}
+
+/* Bunga 6 - Kanan Bawah */
+.date .mail-bunga6 {
+    position: absolute;
+    bottom: 0;
+    right: 15%;
+    z-index: 100;
+    width: 35%;
+}
+
+/* Cop Mail - Center Bottom */
 .date .mail-cop {
     position: absolute;
-    width: 120px;
-    margin-top: 470px;
-    margin-left: 45%;
-    z-index: 3;
+    bottom: 25%;
+    left: 45%;
+    width: 10%;
+    z-index: 100;
+
 }
 
+/* Koran 1 - Kanan Tengah */
 .date .mail-koran1 {
     position: absolute;
-    width: 320px;
-    margin-top: 350px;
-    margin-left: 60%;
+    top: 45%;
+    right: 15%;
     z-index: -2;
+    width: 25%;
 }
 
+/* Koran 2 - Kiri Tengah */
 .date .mail-koran2 {
     position: absolute;
-    width: 300px;
-    margin-top: 350px;
-    margin-left: 18%;
+    top: 50%;
+    left: 20%;
     z-index: -2;
+    width: 23%;
 }
 
+/* Kerdus 1 - Kanan Atas */
 .date .mail-kerdus1 {
     position: absolute;
-    width: 300px;
-    margin-top: 250px;
-    margin-left: 53%;
+    top: 27%;
+    right: 15%;
     z-index: -3;
+    width: 35%;
 }
 
+/* Kerdus 2 - Kanan Bawah */
 .date .mail-kerdus2 {
     position: absolute;
-    width: 250px;
-    margin-top: 500px;
-    margin-left: 62%;
+    bottom: 3%;
+    right: 10%;
     z-index: -3;
+    width: 30%;
 }
 
+/* Kerdus 3 - Kiri Bawah */
 .date .mail-kerdus3 {
     position: absolute;
-    width: 270px;
-    margin-top: 420px;
-    margin-left: 18%;
+    bottom: 10%;
+    left: 10%;
+    width: 25%;
     z-index: -3;
 }
 
+/* Text Content */
 .date .text {
     position: absolute;
-    margin-top: 300px;
-    margin-left: 43%;
+    top: 48%;
+    left: 51%;
+    transform: translate(-50%, -50%) rotate(5deg);
     text-align: center;
-    transform: rotate(5deg);
-    transform-origin: center;
-    z-index: 6;
+    z-index: 100;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .date .text h4 {
     font-family: "Carattere", cursive;
-    font-size: 30px;
+    font-size: clamp(24px, 4vw, 30px);
     color: #85031F;
-    margin-bottom: 0px;
+    margin-bottom: 5px;
+    margin-top: 0;
 }
 
 .date .text h2 {
     font-family: "Carattere", cursive;
-    font-size: 70px;
+    font-size: clamp(50px, 8vw, 70px);
     color: #85031F;
+    margin: 10px 0;
 }
 
 .date .text .time {
     font-family: "Carattere", cursive;
-    font-size: 20px;
+    font-size: clamp(18px, 3vw, 20px);
     color: #85031F;
+    margin: 10px 0;
 }
 
 .date .text .loc {
     font-family: "Montserrat", sans-serif;
-    font-size: 10px;
+    font-size: clamp(10px, 2vw, 12px);
     color: #85031F;
+    margin: 5px 0;
+    font-weight: 500;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Tablet Large (1024px) */
+@media screen and (max-width: 1024px) {
+    .date {
+        min-height: 700px;
+        padding: 30px 0;
+    }
+
+    .date .bg-date{
+        height: 400px;
+    }
+    
+    .date .date-contain {
+        height: 650px;
+        transform: scale(1.2);
+    }
+    
+    .date .mail-box {
+        top: 20%;
+        width: 50%;
+    }
+    
+    .date .text {
+        top: 50%;
+    }
+
+    .date .text h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Tablet (768px) */
+@media screen and (max-width: 768px) {
+    .date {
+        min-height: 600px;
+        padding: 20px 0;
+    }
+    
+    .date .date-contain {
+        height: 550px;
+        transform: scale(1.1);
+    }
+    
+    .date .mail-box {
+        top: 18%;
+        width: 55%;
+    }
+    
+    .date .mail-bunga1 {
+        top: 12%;
+        right: 8%;
+        width: 18%;
+    }
+    
+    .date .mail-bunga2 {
+        top: 8%;
+        right: 0%;
+        width: 32%;
+    }
+    
+    .date .mail-bunga3 {
+        bottom: 18%;
+        left: 15%;
+        width: 22%;
+    }
+    
+    .date .mail-bunga4 {
+        top: 12%;
+        left: 10%;
+        width: 18%;
+    }
+    
+    .date .mail-bunga5 {
+        top: 8%;
+        left: 15%;
+        width: 38%;
+    }
+    
+    .date .mail-bunga6 {
+        bottom: 5%;
+        right: 12%;
+        width: 38%;
+    }
+    
+    .date .mail-koran1 {
+        top: 48%;
+        right: 12%;
+        width: 28%;
+    }
+    
+    .date .mail-koran2 {
+        top: 52%;
+        left: 15%;
+        width: 26%;
+    }
+    
+    .date .mail-cop {
+        bottom: 28%;
+        left: 43%;
+        width: 14%;
+    }
+    
+    .date .text {
+        top: 50%;
+        left: 50%;
+    }
+}
+
+/* Mobile Large (480px) */
+@media screen and (max-width: 480px) {
+    .date {
+        min-height: 500px;
+        padding: 15px 0;
+    }
+    
+    .date .date-contain {
+        height: 480px;
+        transform: scale(1);
+    }
+    
+    .date .mail-box {
+        top: 15%;
+        width: 70%;
+    }
+    
+    /* Sembunyikan beberapa dekorasi */
+    .date .mail-bunga1,
+    .date .mail-bunga4 {
+        display: none;
+    }
+    
+    .date .mail-bunga2 {
+        top: 10%;
+        right: -5%;
+        width: 40%;
+    }
+    
+    .date .mail-bunga5 {
+        top: 10%;
+        left: -5%;
+        width: 45%;
+    }
+    
+    .date .mail-bunga3 {
+        bottom: 20%;
+        left: 5%;
+        width: 30%;
+    }
+    
+    .date .mail-bunga6 {
+        bottom: 20%;
+        right: 5%;
+        width: 35%;
+    }
+    
+    .date .mail-koran1 {
+        top: 50%;
+        right: 8%;
+        width: 32%;
+    }
+    
+    .date .mail-koran2 {
+        top: 55%;
+        left: 10%;
+        width: 30%;
+    }
+    
+    .date .mail-kerdus1 {
+        top: 32%;
+        right: 10%;
+        width: 38%;
+    }
+    
+    .date .mail-kerdus2 {
+        bottom: 8%;
+        right: 5%;
+        width: 35%;
+    }
+    
+    .date .mail-kerdus3 {
+        bottom: 15%;
+        left: 5%;
+        width: 30%;
+    }
+    
+    .date .mail-cop {
+        bottom: 32%;
+        left: 40%;
+        width: 18%;
+    }
+    
+    .date .text {
+        top: 48%;
+        left: 50%;
+        padding: 0 10px;
+    }
+    
+    .date .text h4 {
+        margin-bottom: 2px;
+    }
+    
+    .date .text h2 {
+        margin: 3px 0;
+    }
+    
+    .date .text .time {
+        margin: 5px 0;
+    }
+}
+
+/* Mobile Medium (390px) */
+@media screen and (max-width: 390px) {
+    .date {
+        min-height: 450px;
+    }
+    
+    .date .date-contain {
+        height: 430px;
+    }
+    
+    .date .mail-box {
+        top: 12%;
+        width: 75%;
+    }
+    
+    .date .mail-bunga2 {
+        top: 8%;
+        right: -8%;
+        width: 42%;
+    }
+    
+    .date .mail-bunga5 {
+        top: 8%;
+        left: -8%;
+        width: 48%;
+    }
+    
+    .date .mail-cop {
+        bottom: 30%;
+        left: 38%;
+        width: 20%;
+    }
+    
+    .date .text {
+        top: 46%;
+    }
+}
+
+/* Mobile Small (360px) */
+@media screen and (max-width: 360px) {
+    .date {
+        min-height: 420px;
+    }
+    
+    .date .date-contain {
+        height: 400px;
+    }
+    
+    .date .mail-box {
+        top: 10%;
+        width: 80%;
+    }
+    
+    .date .mail-bunga2 {
+        top: 6%;
+        right: -10%;
+        width: 45%;
+    }
+    
+    .date .mail-bunga5 {
+        top: 6%;
+        left: -10%;
+        width: 50%;
+    }
+    
+    .date .mail-bunga3 {
+        bottom: 18%;
+        left: 2%;
+        width: 32%;
+    }
+    
+    .date .mail-bunga6 {
+        bottom: 18%;
+        right: 2%;
+        width: 38%;
+    }
+    
+    .date .mail-koran1 {
+        top: 52%;
+        right: 5%;
+        width: 35%;
+    }
+    
+    .date .mail-koran2 {
+        top: 56%;
+        left: 5%;
+        width: 33%;
+    }
+    
+    .date .mail-cop {
+        bottom: 28%;
+        left: 36%;
+        width: 22%;
+    }
+    
+    .date .text {
+        top: 44%;
+    }
 }
 
 /* Location Section */
@@ -1247,7 +1589,7 @@ body {
 .locate-list {
     flex-direction: column;
     display: flex;
-    transform: translateX(3%);
+    list-style-position: inside;
 }
 
 
@@ -1539,16 +1881,7 @@ body {
     left: 25%;
     z-index: 2;
     transform: rotate(-6deg);
-    clip-path: polygon(0 0,
-            100% 0,
-            100% 35%,
-            92% 50%,
-            100% 65%,
-            100% 100%,
-            0 100%,
-            0 65%,
-            8% 50%,
-            0 35%);
+    box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.6);
     border-radius: 20px;
 }
 

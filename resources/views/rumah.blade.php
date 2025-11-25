@@ -179,30 +179,30 @@
     </section>
 
     <section class="date" id="the-date">
-        <img src="/public/assets/image/bg-date.webp" alt="" class="bg-date">
-        <div class="date-contain">
-            <img src="/public/assets/image/mail.png" alt="" class="mail-box">
-            <img src="/public/assets/image/bunga-kanan-atas-ke2.png" alt="" class="mail-bunga1">
-            <img src="/public/assets/image/bunga-kanan-atas.png" alt="" class="mail-bunga2">
-            <img src="/public/assets/image/bunga-kiri bawah.png" alt="" class="mail-bunga3">
-            <img src="/public/assets/image/bunga-kiri-atas-ke2.png" alt="" class="mail-bunga4">
-            <img src="/public/assets/image/bunga-kiri-atas.png" alt="" class="mail-bunga5">
-            <img src="/public/assets/image/bunga-kanan-atas.png" alt="" class="mail-bunga6">
-            <img src="/public/assets/image/copmail.png" alt="" class="mail-cop">
-            <img src="/public/assets/image/koran-kanan-tengah.png" alt="" class="mail-koran1">
-            <img src="/public/assets/image/koran-kiri-tengah.png" alt="" class="mail-koran2">
-            <img src="/public/assets/image/pojok-kanan-atas-kerdus.png" alt="" class="mail-kerdus1">
-            <img src="/public/assets/image/pojok-kanan-bawah-kerdus.png" alt="" class="mail-kerdus2">
-            <img src="/public/assets/image/pojok-kiri-bawah-kerdus.png" alt="" class="mail-kerdus3">
-            <div class="text">
-                <h4>save the date!</h4>
-                <h2>03.11. 25</h2>
-                <p class="time">07:30-09:00</p>
-                <br>
-                <p class="loc">SMK Telkom purwokerto </p>
-            </div>
+    <img src="/public/assets/image/bg-hero.webp" alt="" class="bg-date">
+    <div class="date-contain">
+        <img src="/public/assets/image/mail.png" alt="Mail Box" class="mail-box">
+        <img src="/public/assets/image/bunga-kanan-atas-ke2.png" alt="Bunga 1" class="mail-bunga1">
+        <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 2" class="mail-bunga2">
+        <img src="/public/assets/image/bunga-kiri bawah.png" alt="Bunga 3" class="mail-bunga3">
+        <img src="/public/assets/image/bunga-kiri-atas-ke2.png" alt="Bunga 4" class="mail-bunga4">
+        <img src="/public/assets/image/bunga-kiri-atas.png" alt="Bunga 5" class="mail-bunga5">
+        <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 6" class="mail-bunga6">
+        <img src="/public/assets/image/copmail.png" alt="Cop Mail" class="mail-cop">
+        <img src="/public/assets/image/koran-kanan-tengah.png" alt="Koran 1" class="mail-koran1">
+        <img src="/public/assets/image/koran-kiri-tengah.png" alt="Koran 2" class="mail-koran2">
+        <img src="/public/assets/image/pojok-kanan-atas-kerdus.png" alt="Kerdus 1" class="mail-kerdus1">
+        <img src="/public/assets/image/pojok-kanan-bawah-kerdus.png" alt="Kerdus 2" class="mail-kerdus2">
+        <img src="/public/assets/image/pojok-kiri-bawah-kerdus.png" alt="Kerdus 3" class="mail-kerdus3">
+        
+        <div class="text">
+            <h4>save the date!</h4>
+            <h2>03.11.25</h2>
+            <p class="time">07:30-09:00</p>
+            <p class="loc">SMK Telkom Purwokerto</p>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Location Section -->
     <section class="location" id="location">

@@ -15,7 +15,7 @@
 
         body {
             font-family: 'Georgia', serif;
-            background: url(/public/assets/image/bg-hero.webp) no-repeat center center/cover;
+            background: url("{{ asset('assets/image/bg-hero.webp') }}") no-repeat center center/cover;
             min-height: 96vh;
             display: flex;
             align-items: center;

@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="/resources/css/home.css">
 
 <body>
-    <img src="/public/assets/image/bunga-kiri-hero.png" class="bunga-kiri-hero">
-    <img src="/public/assets/image/bunga-kanan-hero.png" class="bunga-kanan-hero">
+    <img src="{{ asset('assets/image/bunga-kiri-hero.png') }}"class="bunga-kiri-hero">
+    <img src="{{ asset('assets/image/bunga-kanan-hero.png') }}" class="bunga-kanan-hero">
     <section class="hero" id="hero">
         <div class="navbar">
             <div class="nav-container">
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="logo">
-            <img src="/public/assets/image/cmo.png" id="logo" alt="logo">
+            <img src="{{ asset('assets/image/cmo.png') }}" id="logo" alt="logo">
         </div>
         <div class="hero-text">
             <div class="hero-title">
@@ -46,7 +46,7 @@
         <button class="tamu" onclick="location.href='/rsvp'">
             Masukkan Data Tamu Anda
         </button>
-        <img src="/public/assets/image/bg-hero.webp" class="bg-hero" alt="hero-bg">
+        <img src="{{ asset('assets/image/bg-hero.webp') }}" class="bg-hero" alt="hero-bg">
     </section>
 
     <div class="container-bunga">
@@ -170,30 +170,30 @@
         <div class="container">
             <h1>Our Gallery</h1>
             <div class="parent">
-                <div class="div1"><img src="/public/assets/image/gallery-2.webp" alt=""></div>
-                <div class="div2"><img src="/public/assets/image/gallery-3.webp" alt=""></div>
-                <div class="div3"><img src="/public/assets/image/gallery-4.webp" alt=""></div>
-                <div class="div4"><img src="/public/assets/image/gallery-1.webp" alt=""></div>
+                <div class="div1"><img src="{{ asset('assets/image/gallery-2.webp') }}" alt=""></div>
+                <div class="div2"><img src="{{ asset('assets/image/gallery-3.webp') }}" alt=""></div>
+                <div class="div3"><img src="{{ asset('assets/image/gallery-4.webp') }}" alt=""></div>
+                <div class="div4"><img src="{{ asset('assets/image/gallery-1.webp') }}" alt=""></div>
             </div>
         </div>
     </section>
 
     <section class="date" id="the-date">
-    <img src="/public/assets/image/bg-hero.webp" alt="" class="bg-date">
+    <img src="{{ asset('assets/image/bg-hero.webp') }}" alt="" class="bg-date">
     <div class="date-contain">
-        <img src="/public/assets/image/mail.png" alt="Mail Box" class="mail-box">
-        <img src="/public/assets/image/bunga-kanan-atas-ke2.png" alt="Bunga 1" class="mail-bunga1">
-        <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 2" class="mail-bunga2">
-        <img src="/public/assets/image/bunga-kiri-bawah.png" alt="Bunga 3" class="mail-bunga3">
-        <img src="/public/assets/image/bunga-kiri-atas-ke2.png" alt="Bunga 4" class="mail-bunga4">
-        <img src="/public/assets/image/bunga-kiri-atas.png" alt="Bunga 5" class="mail-bunga5">
-        <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 6" class="mail-bunga6">
-        <img src="/public/assets/image/copmail.png" alt="Cop Mail" class="mail-cop">
-        <img src="/public/assets/image/koran-kanan-tengah.png" alt="Koran 1" class="mail-koran1">
-        <img src="/public/assets/image/koran-kiri-tengah.png" alt="Koran 2" class="mail-koran2">
-        <img src="/public/assets/image/pojok-kanan-atas-kerdus.png" alt="Kerdus 1" class="mail-kerdus1">
-        <img src="/public/assets/image/pojok-kanan-bawah-kerdus.png" alt="Kerdus 2" class="mail-kerdus2">
-        <img src="/public/assets/image/pojok-kiri-bawah-kerdus.png" alt="Kerdus 3" class="mail-kerdus3">
+        <img src="{{ asset('assets/image/mail.png') }}" alt="Mail Box" class="mail-box">
+        <img src="{{ asset('assets/image/bunga-kanan-atas-ke2.png') }}" alt="Bunga 1" class="mail-bunga1">
+        <img src="{{ asset('assets/image/bunga-kanan-atas.png') }}" alt="Bunga 2" class="mail-bunga2">
+        <img src="{{ asset('assets/image/bunga-kiri-bawah.png') }}" alt="Bunga 3" class="mail-bunga3">
+        <img src="{{ asset('assets/image/bunga-kiri-atas-ke2.png') }}" alt="Bunga 4" class="mail-bunga4">
+        <img src="{{ asset('assets/image/bunga-kiri-atas.png') }}" alt="Bunga 5" class="mail-bunga5">
+        <img src="{{ asset('assets/image/bunga-kanan-atas.png') }}" alt="Bunga 6" class="mail-bunga6">
+        <img src="{{ asset('assets/image/copmail.png') }}" alt="Cop Mail" class="mail-cop">
+        <img src="{{ asset('assets/image/koran-kanan-tengah.png') }}" alt="Koran 1" class="mail-koran1">
+        <img src="{{ asset('assets/image/koran-kiri-tengah.png') }}" alt="Koran 2" class="mail-koran2">
+        <img src="{{ asset('assets/image/pojok-kanan-atas-kerdus.png') }}" alt="Kerdus 1" class="mail-kerdus1">
+        <img src="{{ asset('assets/image/pojok-kanan-bawah-kerdus.png') }}" alt="Kerdus 2" class="mail-kerdus2">
+        <img src="{{ asset('assets/image/pojok-kiri-bawah-kerdus.png') }}" alt="Kerdus 3" class="mail-kerdus3">
         
         <div class="text">
             <h4>save the date!</h4>
@@ -231,7 +231,7 @@
 
     <section class="surat">
         <div class="container">
-            <img src="/public/assets/image/bunga-kanan-atas-ke2.png" class="flower-surat">
+            <img src="{{ asset('assets/image/bunga-kanan-atas-ke2.png') }}" class="flower-surat">
             <div class="red-card card-rsvp">
                 <div class="card-content">
                     <p class="small-text">fill your</p>

@@ -526,7 +526,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    background: url(/public/assets/image/bg-story.webp) no-repeat center center/cover;
+    background: url("{{ asset('assets/image/bg-story.webp') }}") no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1886,7 +1886,7 @@ mask-image: linear-gradient(
     height: auto;
     /* Biarkan tinggi menyesuaikan lebar */
     aspect-ratio: 436 / 189;
-    background: url(/public/assets/image/bg-surat.webp) no-repeat center center;
+    background: url("{{ asset('assets/image/bg-surat.webp') }}") no-repeat center center;
     background-size: 100% 100%;
     /* Memaksa gambar memenuhi kotak yang rasionya sudah pas */
     max-width: 1600px;
@@ -2063,7 +2063,7 @@ mask-image: linear-gradient(
 }
 
 .footer {
-    background: url('/public/assets/image/bg-footer.webp') no-repeat center top;
+    background: url("{{ asset('assets/image/bg-footer.webp') }}") no-repeat center top;
     background-size: 100% auto;
     padding: 9rem 2rem 2rem;
     color: white;

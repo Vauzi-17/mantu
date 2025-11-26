@@ -42,6 +42,6 @@ class RsvpController extends Controller
         GenerateVoucherJob::dispatch($guest);
 
         return redirect()->route('rsvp.index')
-                    ->with('success', 'Thank you! Your RSVP has been submitted. A QR Code has been sent to your email by Pos Officer XI PPLG 1.');
+                    ->with('success', 'Thank you! Your RSVP has been submitted. A QR Code has been sent to your email by Mail Officer of XI PPLG 1.');
     }
 }

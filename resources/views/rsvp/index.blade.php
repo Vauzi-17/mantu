@@ -424,7 +424,7 @@
                 Below is an example of the email you will receive, containing your personal QR Code.
             </p>
 
-             <img src="{{ asset('assets/image/bg-hero.webp') }}"
+             <img src="{{ asset('assets/image/ss.jpeg') }}"
                  alt="Email Preview"
                  style="margin-top: 20px; width: 100%; border-radius: 15px; border: 1px solid rgba(200,150,100,0.3); box-shadow: 0 0 20px rgba(0,0,0,0.3);">
 
@@ -448,9 +448,15 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Email <span class="required">(required)</span></label>
-                    <input type="email" name="email" id="email" value="{{ old('email') }}" required>
-                </div>
+    <label for="email">Email <span class="required">(required)</span></label>
+
+    <input type="email" name="email" id="email" value="{{ old('email') }}" required>
+
+    <p style="font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 6px; font-style: italic;">
+        A valid email is required to receive your QR Code.
+    </p>
+</div>
+
 
                 <div class="form-group">
                     <label for="whatsapp">Whatsapp number <span class="required">(optional)</span></label>

@@ -29,7 +29,7 @@ class VoucherNotification extends Mailable
     public function build()
     {
         return $this
-            ->subject('Voucher Spesial Untuk Anda!')
+            ->subject('Special Voucher just for you!')
             ->view('emails.voucher')
             ->with(['guest' => $this->guest])
             ->attachData(

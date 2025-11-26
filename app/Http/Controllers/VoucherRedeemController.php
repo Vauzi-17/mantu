@@ -29,14 +29,15 @@ class VoucherRedeemController extends Controller
         // 2. Cek 1: Tidak Ditemukan
         if (!$voucher) {
             Log::warning("Voucher redeem failed: {$code} (Not Found)");
-            return response()->json(['error' => 'Voucher tidak ditemukan.'], 404);
+            return response()->json(['error' => 'Voucher not found...'], 404);
         }
 
         // 3. Cek 2: Sudah Digunakan
         if ($voucher->status === 'used') {
             Log::warning("Voucher redeem failed: {$code} (Already Used)");
             return response()->json([
-                'error' => "Voucher sudah digunakan pada {$voucher->used_at} oleh tamu {$voucher->guest->name}."
+                'guest' => "{$voucher->guest->name}",
+                'status' => "used"
             ], 422); // Unprocessable Entity
         }
 
@@ -58,7 +59,8 @@ class VoucherRedeemController extends Controller
             Log::info("Voucher redeem SUCCESS: {$code} for guest {$voucher->guest->name}");
             
             return response()->json([
-                'message' => "Voucher BERHASIL ditukar! Diskon 10% untuk Tamu: {$voucher->guest->name}"
+                'guest' => "{$voucher->guest->name}",
+                'status' => "success"
             ], 200);
 
         } catch (\Exception $e) {

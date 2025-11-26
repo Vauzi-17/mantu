@@ -170,6 +170,39 @@
             font-style: italic;
         }
 
+        .form-group label input[type="radio"] {
+            appearance: none;
+            width: 30px;
+            height: 20px;
+            border: 2px solid white;
+            border-radius: 50%;
+            margin-right: 10px;
+            position: relative;
+            cursor: pointer;
+            transform: scale(0.7)
+        }
+
+        /* DOT jika dipilih */
+        .form-group label input[type="radio"]:checked::after {
+            content: "";
+            position: absolute;
+            inset: 4px;
+            background: white;
+            border-radius: 50%;
+        }
+
+        /* Label radio (YA / TIDAK) */
+        .form-group label input[type="radio"]+span,
+        .form-group label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-style: italic;
+            color: white;
+            cursor: pointer;
+            margin: 8px 0;
+        }
+
         /* Responsive */
         @media (max-width: 968px) {
             .form-image {
@@ -352,6 +385,21 @@
                     <label for="whatsapp">Whatsapp number <span class="required">(optional)</span></label>
                     <input type="text" name="phone" id="phone" placeholder="08xx xxxx xxxx" value="{{ old('phone') }}">
                 </div>
+
+                <div class="form-group">
+                    <label>Attendance</label>
+
+                    <label>
+                        <input type="radio" name="attendance" value="yes">
+                        Yes, I’ll celebrate with you !
+                    </label>
+
+                    <label>
+                        <input type="radio" name="attendance" value="no">
+                        No, can’t make it..
+                    </label>
+                </div>
+
 
                 <button type="submit" class="submit-btn">Submit</button>
 

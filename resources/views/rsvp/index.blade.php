@@ -253,13 +253,14 @@
 
 <body>
     <div class="bg-rsvp">
-        <img src="/public/assets/image/bg-hero.webp" alt="">
+        <img src="{{ asset('assets/image/bg-hero.webp') }}" alt="">
     </div>
     <div class="form-container">
+        
         <!-- Left Side - Image -->
         <div class="form-image">
             <div class="form-image-placeholder">
-                <img src="../img/Rectangle 82.svg" alt="">
+                <img src="{{ asset('assets/image/bg-hero.webp') }}" alt="">
             </div>
         </div>
 

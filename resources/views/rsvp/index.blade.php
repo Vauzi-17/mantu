@@ -472,13 +472,13 @@
                     <label>Attendance</label>
 
                     <label>
-                        <input type="radio" name="attendance" value="yes">
-                        Yes, I’ll celebrate with you !
+                        <input type="radio" name="rsvp_status" value="coming" required>
+                        Yes, I'll celebrate with you!
                     </label>
 
                     <label>
-                        <input type="radio" name="attendance" value="no">
-                        No, can’t make it..
+                        <input type="radio" name="rsvp_status" value="not_coming" required>
+                        No, I can't make it..
                     </label>
                 </div>
 

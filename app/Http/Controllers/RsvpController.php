@@ -26,7 +26,7 @@ class RsvpController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255|unique:guests,email',
             'phone' => 'nullable|string|max:20',
-            'rsvp_status' => 'coming',
+            'rsvp_status' => 'required|in:coming,not_coming',
         ]);
 
         if ($validator->fails()) {

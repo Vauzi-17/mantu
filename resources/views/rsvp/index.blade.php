@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -174,6 +175,7 @@
             .form-image {
                 display: none;
             }
+
             .form-container {
                 grid-template-columns: 1fr;
             }
@@ -216,9 +218,51 @@
         textarea::-webkit-scrollbar-thumb:hover {
             background: rgba(200, 150, 100, 0.6);
         }
+
+        .toast {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            padding: 14px 20px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 14px;
+            font-family: 'Georgia', serif;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: slideDown 0.4s ease-out forwards, fadeOut 0.4s ease-in forwards 4s;
+            z-index: 9999;
+        }
+
+        .toast-success {
+            background: rgba(50, 200, 120, 0.9);
+
+        }
+
+        .toast-error {
+            background: rgba(220, 70, 70, 0.9);
+
+        }
+
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
     </style>
 </head>
-{{-- <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+{{--
+
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
     <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 class="text-2xl font-bold mb-6 text-center">RSVP Kehadiran</h1>
 
@@ -226,15 +270,18 @@
             @csrf
             <div class="mb-4">
                 <label for="name" class="block text-gray-700">Nama</label>
-                <input type="text" name="name" id="name" class="w-full px-3 py-2 border rounded" value="{{ old('name') }}">
+                <input type="text" name="name" id="name" class="w-full px-3 py-2 border rounded"
+                    value="{{ old('name') }}">
             </div>
             <div class="mb-4">
                 <label for="email" class="block text-gray-700">Email</label>
-                <input type="email" name="email" id="email" class="w-full px-3 py-2 border rounded" value="{{ old('email') }}">
+                <input type="email" name="email" id="email" class="w-full px-3 py-2 border rounded"
+                    value="{{ old('email') }}">
             </div>
             <div class="mb-4">
                 <label for="phone" class="block text-gray-700">No. WhatsApp (cth: 62812xxxx)</label>
-                <input type="text" name="phone" id="phone" class="w-full px-3 py-2 border rounded" value="{{ old('phone') }}">
+                <input type="text" name="phone" id="phone" class="w-full px-3 py-2 border rounded"
+                    value="{{ old('phone') }}">
             </div>
             <div class="mb-4">
                 <label for="rsvp_status" class="block text-gray-700">Konfirmasi Kehadiran</label>
@@ -249,6 +296,7 @@
         </form>
     </div>
 </body>
+
 </html> --}}
 
 <body>
@@ -256,7 +304,7 @@
         <img src="{{ asset('assets/image/bg-hero.webp') }}" alt="">
     </div>
     <div class="form-container">
-        
+
         <!-- TODO: Buat dialog keren untuk menandakan status RSVP -->
         <!-- Left Side - Image -->
         <div class="form-image">
@@ -267,8 +315,8 @@
 
         <!-- Tampilkan error validasi -->
         @if ($errors->any())
-            <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
-                <ul>
+            <div class="toast toast-error">
+                <ul class="list-disc ml-4">
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
@@ -276,12 +324,12 @@
             </div>
         @endif
 
-        <!-- Tampilkan pesan sukses -->
         @if (session('success'))
-            <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
+            <div class="toast toast-success">
                 {{ session('success') }}
             </div>
         @endif
+
 
         <!-- Right Side - Form -->
         <div class="form-content">
@@ -295,7 +343,7 @@
                     <input type="text" name="name" id="name" value="{{ old('name') }}" required>
                 </div>
 
-                         <div class="form-group">
+                <div class="form-group">
                     <label for="email">Email <span class="required">(required)</span></label>
                     <input type="email" name="email" id="email" value="{{ old('email') }}" required>
                 </div>
@@ -311,5 +359,12 @@
             </form>
         </div>
     </div>
+    <script>
+        setTimeout(() => {
+            const toast = document.querySelector('.toast');
+            if (toast) toast.remove();
+        }, 4500);
+    </script>
 </body>
+
 </html>

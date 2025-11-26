@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="/resources/css/home.css">
+<link rel="stylesheet" href="{{ asset('resources/css/home.css') }}">
 
 <body>
     <img src="{{ asset('assets/image/bunga-kiri-hero.png') }}"class="bunga-kiri-hero">

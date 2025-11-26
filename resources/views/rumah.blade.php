@@ -184,7 +184,7 @@
         <img src="/public/assets/image/mail.png" alt="Mail Box" class="mail-box">
         <img src="/public/assets/image/bunga-kanan-atas-ke2.png" alt="Bunga 1" class="mail-bunga1">
         <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 2" class="mail-bunga2">
-        <img src="/public/assets/image/bunga-kiri bawah.png" alt="Bunga 3" class="mail-bunga3">
+        <img src="/public/assets/image/bunga-kiri-bawah.png" alt="Bunga 3" class="mail-bunga3">
         <img src="/public/assets/image/bunga-kiri-atas-ke2.png" alt="Bunga 4" class="mail-bunga4">
         <img src="/public/assets/image/bunga-kiri-atas.png" alt="Bunga 5" class="mail-bunga5">
         <img src="/public/assets/image/bunga-kanan-atas.png" alt="Bunga 6" class="mail-bunga6">

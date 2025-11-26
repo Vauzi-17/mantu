@@ -44,8 +44,8 @@
 
 
         .form-container {
-            background: #120b08bb;
-            border: 2px solid rgba(200, 150, 100, 0.3);
+            background: #120b08e8;
+            border: 2px solid rgba(200, 150, 100, 0.5);
             border-radius: 30px;
             display: grid;
             grid-template-columns: 1fr 1fr;

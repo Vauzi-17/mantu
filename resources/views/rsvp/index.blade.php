@@ -292,6 +292,63 @@
                 transform: translateY(-20px);
             }
         }
+
+        /* SUCCESS POPUP */
+.success-popup-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+.success-popup-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.success-popup {
+    background: #120b08f0;
+    border: 2px solid rgba(200, 150, 100, 0.4);
+    padding: 30px 35px;
+    border-radius: 25px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    color: white;
+    font-family: 'Georgia', serif;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    animation: popupZoom .3s ease;
+}
+
+@keyframes popupZoom {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.success-popup button {
+    margin-top: 20px;
+    background: transparent;
+    border: 2px solid rgba(200,150,100,0.7);
+    padding: 10px 25px;
+    border-radius: 20px;
+    color: rgba(200,150,100,0.9);
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Georgia', serif;
+}
+
+.success-popup button:hover {
+    background: rgba(200,150,100,0.1);
+    border-color: rgba(200,150,100,1);
+    color: rgba(200,150,100,1);
+}
+
     </style>
 </head>
 {{--
@@ -359,10 +416,23 @@
         @endif
 
         @if (session('success'))
-            <div class="toast toast-success">
-                {{ session('success') }}
-            </div>
-        @endif
+    <div class="success-popup-overlay active" id="successPopup">
+        <div class="success-popup">
+            <p>{{ session('success') }}</p>
+            <br>
+            <p style="margin-top: 15px; font-size: 13px; opacity: .8;">
+                Below is an example of the email you will receive, containing your personal QR Code.
+            </p>
+
+             <img src="{{ asset('assets/image/bg-hero.webp') }}"
+                 alt="Email Preview"
+                 style="margin-top: 20px; width: 100%; border-radius: 15px; border: 1px solid rgba(200,150,100,0.3); box-shadow: 0 0 20px rgba(0,0,0,0.3);">
+
+            <button onclick="closeSuccessPopup()">Close</button>
+        </div>
+    </div>
+@endif
+
 
 
         <!-- Right Side - Form -->
@@ -413,6 +483,11 @@
             const toast = document.querySelector('.toast');
             if (toast) toast.remove();
         }, 7500);
+
+        function closeSuccessPopup() {
+        const popup = document.getElementById('successPopup');
+        if (popup) popup.classList.remove('active');
+    }
     </script>
 </body>
 

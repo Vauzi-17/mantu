@@ -257,6 +257,7 @@
     </div>
     <div class="form-container">
         
+        <!-- TODO: Buat dialog keren untuk menandakan status RSVP -->
         <!-- Left Side - Image -->
         <div class="form-image">
             <div class="form-image-placeholder">

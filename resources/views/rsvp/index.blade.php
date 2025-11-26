@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RSVP Undangan</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/image/cmo.png') }}">
     <!-- Ganti dengan styling Anda, cth: Tailwind -->
     <script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
     <style>
@@ -411,7 +412,7 @@
         setTimeout(() => {
             const toast = document.querySelector('.toast');
             if (toast) toast.remove();
-        }, 4500);
+        }, 7500);
     </script>
 </body>
 

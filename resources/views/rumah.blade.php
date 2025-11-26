@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Cinta & Mikail</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/image/cmo.png') }}">
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&display=swap');

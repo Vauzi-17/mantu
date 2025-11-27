@@ -53,6 +53,10 @@
         }
     }
 
+    .tamu-btn {
+       bottom: 0;
+    }
+
     .navbar {
         padding: 4rem 3rem;
         position: absolute;
@@ -173,7 +177,8 @@
         font-size: 4.5rem;
     }
 
-    .arrow-left, .arrow-right {
+    .arrow-left,
+    .arrow-right {
         color: white;
         font-size: 2rem;
         font-weight: bold;
@@ -188,13 +193,27 @@
     }
 
     @keyframes slideRight {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(10px); }
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(10px);
+        }
     }
 
     @keyframes slideLeft {
-        0%, 100% { transform: translateX(0); }
-        50% { transform: translateX(-10px); }
+
+        0%,
+        100% {
+            transform: translateX(0);
+        }
+
+        50% {
+            transform: translateX(-10px);
+        }
     }
 
     .tamu {
@@ -396,29 +415,45 @@
             font-size: 2rem;
         }
 
-        /* --- 6. Tombol Tamu DIMASUKKAN KE HERO (di tengah bawah) --- */
-        .tamu {
-            position: absolute;
-            top: 0%;
-            /* Masih di dalam hero */
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.5rem;
-            padding: 0.8rem 1.5rem;
-            z-index: -1;
-            width: 250%;
-        }
-
-        .btn-tamu {
-            position: absolute; 
-            top: b0%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-        }
-
-        
+    /* --- 6. Container Tombol Tamu --- */
+   .tamu-btn {
+        position: absolute !important;
+        bottom: 25% !important; /* Dinaikkan dari 15% ke 20% */
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 0.5rem !important;
+        z-index: 20 !important;
+        width: 95% !important;
+        max-width: 300px !important;
+        flex-wrap: nowrap !important;
     }
 
+    /* Tombol Tamu */
+    .tamu {
+        font-size: 0.65rem !important; /* Lebih kecil dari 0.75rem */
+        padding: 0.7rem 0.9rem !important; /* Padding lebih kecil */
+        border-radius: 12px !important;
+        white-space: normal !important;
+        line-height: 1.2 !important;
+        flex: 1 !important;
+        min-width: 0 !important;
+        text-align: center !important;
+    }
+
+    /* Arrow styling */
+    .arrow-left,
+    .arrow-right {
+        font-size: 0.9rem !important; /* Arrow juga dikecilkan */
+        color: white !important;
+        flex-shrink: 0 !important;
+    }
+    }
+
+    
 
     .container-bunga {
         top: 20%;
@@ -1661,33 +1696,33 @@
         list-style-position: inside;
     }
 
-   .btn-map {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 0.9rem 1.7rem;
-    z-index: 20;
-    cursor: pointer;
-    background: rgba(255, 255, 255, 0.15);
-    color: white;
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    font-size: 1rem;
-    transition: all 0.25s ease;
-    font-weight: 600;
-}
+    .btn-map {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 0.9rem 1.7rem;
+        z-index: 20;
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.15);
+        color: white;
+        backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        font-size: 1rem;
+        transition: all 0.25s ease;
+        font-weight: 600;
+    }
 
-.btn-map:hover {
-    background: white;
-    color: black;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.2);
-}
+    .btn-map:hover {
+        background: white;
+        color: black;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 14px rgba(255, 255, 255, 0.2);
+    }
 
-.icon-map {
-    display: block;
-}
+    .icon-map {
+        display: block;
+    }
 
 
 
@@ -2375,12 +2410,13 @@
                 <p>Yogayakarta’s wedding</p>
             </div>
         </div>
-        <div class="tamu-btn" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 1rem; z-index: 20;">
-            <span class="arrow-left">→</span>
+        <div class="tamu-btn"
+            style="position: absolute; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 1rem; z-index: 20;">
+            <span class="arrow-left"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"/></svg></span>
             <button class="tamu" onclick="location.href='/rsvp'">
                 RSVP to get a 10% merch voucher!
             </button>
-            <span class="arrow-right">←</span>
+            <span class="arrow-right"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg></span>
         </div>
         <img src="{{ asset('assets/image/bg-hero.webp') }}" class="bg-hero" alt="hero-bg">
     </section>
@@ -2560,13 +2596,15 @@
                         <li>Postal Code: 53147</li>
                     </ul>
                     <br>
-                    <button class="btn-map" onclick="window.open('https://maps.app.goo.gl/3Gj3RkxtMWupP2Mz5', '_blank');">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" class="icon-map">
-        <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
-        9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-    </svg>
-    View on Google Maps
-</button>
+                    <button class="btn-map"
+                        onclick="window.open('https://maps.app.goo.gl/3Gj3RkxtMWupP2Mz5', '_blank');">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18"
+                            class="icon-map">
+                            <path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+        9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" />
+                        </svg>
+                        View on Google Maps
+                    </button>
 
                 </div>
             </div>

@@ -43,7 +43,7 @@ class GenerateVoucherJob implements ShouldQueue
             }
 
             // 2. Buat kode voucher unik
-            $code = 'WEDD-VOUCHER-' . Str::upper(Str::random(10));
+            $code = 'MANTU-VOUCHER-' . Str::upper(Str::random(10));
 
             // 3. Simpan voucher ke database
             $voucher = Voucher::create([

@@ -173,15 +173,34 @@
         font-size: 4.5rem;
     }
 
+    .arrow-left, .arrow-right {
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .arrow-left {
+        animation: slideRight 1s ease-in-out infinite;
+    }
+
+    .arrow-right {
+        animation: slideLeft 1s ease-in-out infinite;
+    }
+
+    @keyframes slideRight {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(10px); }
+    }
+
+    @keyframes slideLeft {
+        0%, 100% { transform: translateX(0); }
+        50% { transform: translateX(-10px); }
+    }
+
     .tamu {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         padding: 1rem 2rem;
-        z-index: 20;
         cursor: pointer;
-        background: none;
+        background: rgba(0, 0, 0, 0.7);
         color: white;
         backdrop-filter: blur(10px);
         border-radius: 20px;
@@ -380,14 +399,24 @@
         /* --- 6. Tombol Tamu DIMASUKKAN KE HERO (di tengah bawah) --- */
         .tamu {
             position: absolute;
-            top: 75%;
+            top: 0%;
             /* Masih di dalam hero */
             left: 50%;
             transform: translateX(-50%);
-            font-size: 0.9rem;
+            font-size: 0.5rem;
             padding: 0.8rem 1.5rem;
-            z-index: 10;
+            z-index: -1;
+            width: 250%;
         }
+
+        .btn-tamu {
+            position: absolute; 
+            top: b0%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+        }
+
+        
     }
 
 
@@ -2346,9 +2375,13 @@
                 <p>Yogayakarta’s wedding</p>
             </div>
         </div>
-        <button class="tamu" onclick="location.href='/rsvp'">
-            Masukkan Data Tamu Anda
-        </button>
+        <div class="tamu-btn" style="position: absolute; top: 100%; left: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 1rem; z-index: 20;">
+            <span class="arrow-left">→</span>
+            <button class="tamu" onclick="location.href='/rsvp'">
+                RSVP to get a 10% merch voucher!
+            </button>
+            <span class="arrow-right">←</span>
+        </div>
         <img src="{{ asset('assets/image/bg-hero.webp') }}" class="bg-hero" alt="hero-bg">
     </section>
 
@@ -2463,7 +2496,7 @@
                     chapter as two hearts united by tradition and the prayers of our families. This marks the beginning
                     of our journey, one that is humble yet filled with deep affection.
                 </p>
-                <p class="signature">Cinta dan Mikail</p>
+                <p class="signature">Cinta & Mikail</p>
             </div>
         </div>
     </section>

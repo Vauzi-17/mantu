@@ -1,0 +1,37 @@
+services:
+  mysql:
+    image: docker.io/library/mysql:8.0
+    container_name: mantu_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: mantu
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: mantuan
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - mantu
+
+  phpmyadmin:
+    image: docker.io/phpmyadmin/phpmyadmin:latest
+    container_name: mantu_phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: laravel
+      PMA_PASSWORD: mantuan
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+    networks:
+      - mantu
+
+volumes:
+  mysql_data:
+
+networks:
+  mantu:
+    driver: bridge

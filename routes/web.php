@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\RsvpController;
+use App\Http\Controllers\VoucherController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\VoucherScanController;
 use App\Http\Controllers\VoucherRedeemController; // <-- TAMBAHKAN INI
 use Illuminate\Support\Facades\Route;
@@ -13,10 +16,22 @@ Route::get('/', function () {
 Route::get('/rsvp', [RsvpController::class, 'index'])->name('rsvp.index');
 Route::post('/rsvp', [RsvpController::class, 'store'])->name('rsvp.store');
 
-// Halaman Dashboard (contoh)
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Halaman Dashboard
+Route::get('/admin/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('dashboard');
+    
+Route::get('/admin/dashboard/voucher', [VoucherController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('dashboard_voucher');
+    
+Route::get('/admin/dashboard/guest', [GuestController::class, 'index'])
+    ->middleware(['auth'])
+    ->name('dashboard_guest');
+
+Route::resource('voucher', DashboardController::class);
+Route::resource('voucher', VoucherController::class);
+Route::resource('guest', GuestController::class);
 
 // Halaman Scanner dan API untuk Staf Merchandise (Wajib Login)
 Route::middleware(['auth'])->group(function () {

@@ -13,6 +13,10 @@ class Voucher extends Model
         'guest_id', 'code', 'discount_percentage', 'status', 
         'used_at', 'redeemed_by', 'expires_at'
     ];
+    
+    protected $casts = [
+        'used_at' => 'datetime',
+    ];
 
     /**
      * Relasi: Voucher ini milik seorang Tamu.
